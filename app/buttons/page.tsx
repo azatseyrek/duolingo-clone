@@ -1,6 +1,8 @@
+import Image from 'next/image';
+
 import { Button } from '@/components/ui/button';
 
-export default function Home() {
+const ButtonsPage = () => {
   return (
     <div className="flex max-w-[200px] flex-col space-y-4 p-4">
       <Button>Default</Button>
@@ -17,4 +19,6 @@ export default function Home() {
       <Button variant="sidebarOutline">sidebar Outline</Button>
     </div>
   );
-}
+};
+
+export default ButtonsPage;
