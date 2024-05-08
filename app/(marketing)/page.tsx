@@ -1,9 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { Loader } from '@/components/loader';
 import { Button } from '@/components/ui/button';
-import { ClerkLoaded, ClerkLoading, SignInButton, SignUpButton, SignedIn, SignedOut } from '@clerk/nextjs';
-import { Loader } from 'lucide-react';
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+} from '@clerk/nextjs';
 
 export default function Home() {
   return (
@@ -17,16 +24,24 @@ export default function Home() {
         </h1>
         <div className="max-w[330px] flex w-full flex-col items-center gap-y-3">
           <ClerkLoading>
-            <Loader size={20} className="animate-spin text-muted-foreground" />
+            <Loader />
           </ClerkLoading>
           <ClerkLoaded>
             <SignedOut>
-              <SignUpButton mode="modal" forceRedirectUrl="/learn" signInForceRedirectUrl="/learn">
+              <SignUpButton
+                mode="modal"
+                forceRedirectUrl="/learn"
+                signInForceRedirectUrl="/learn"
+              >
                 <Button size="lg" variant="secondary" className="w-full">
                   Get started
                 </Button>
               </SignUpButton>
-              <SignInButton mode="modal" forceRedirectUrl="/learn" signUpForceRedirectUrl="/learn">
+              <SignInButton
+                mode="modal"
+                forceRedirectUrl="/learn"
+                signUpForceRedirectUrl="/learn"
+              >
                 <Button size="lg" variant="primaryOutline" className="w-full">
                   I already have an account.
                 </Button>

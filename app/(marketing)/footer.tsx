@@ -1,6 +1,4 @@
-import Image from 'next/image';
-
-import { Button } from '@/components/ui/button';
+import { FlagButton } from '@/components/flag-button';
 
 const displayCountries = [
   {
@@ -43,10 +41,12 @@ export const Footer = () => {
     <footer className="hidden h-20 w-full border-t-2 border-slate-200 p-2 lg:block">
       <div className="mx-auto flex h-full max-w-screen-lg items-center justify-evenly">
         {displayCountries.map((country) => (
-          <Button size="lg" variant="ghost" className="w-full" key={country.id}>
-            <Image src={country.imagePath} alt={country.altText} height={32} width={40} className="mr-4 rounded-md" />
-            {country.title}
-          </Button>
+          <FlagButton
+            key={country.id}
+            imagePath={country.imagePath}
+            altText={country.altText}
+            title={country.title}
+          />
         ))}
       </div>
     </footer>
