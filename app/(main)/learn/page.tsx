@@ -6,6 +6,21 @@ import { StickyWrapper } from '@/components/sticky-wrapper';
 import { UserProgress } from '@/components/user-progress';
 
 const LearnPage = () => {
+  let dbUrl: string;
+
+  switch (process.env.NODE_ENV) {
+    case 'development':
+      dbUrl = process.env.DATABASE_URL_DEV!;
+      break;
+    case 'production':
+      dbUrl = process.env.DATABASE_URL!;
+      break;
+    default:
+      dbUrl = process.env.DATABASE_URL_DEV!;
+  }
+
+  console.log(dbUrl);
+
   return (
     <div className="flex flex-row-reverse gap-12 px-6">
       <StickyWrapper>
