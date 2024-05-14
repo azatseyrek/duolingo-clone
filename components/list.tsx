@@ -1,5 +1,5 @@
 'use client';
-// this is test commit from lingo-2 branch
+
 import { courses } from '@/db/schema';
 
 import { Card } from './card';

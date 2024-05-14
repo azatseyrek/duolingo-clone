@@ -1,6 +1,5 @@
 import Image from 'next/image';
 
-// test commit
 import { cn } from '@/lib/utils';
 import { Check } from 'lucide-react';
 
@@ -12,7 +11,7 @@ type CardProps = {
   disabled: boolean;
   active: boolean;
 };
-// Card Component
+
 export const Card = ({ id, title, imageSrc, onClick, disabled, active }: CardProps) => {
   return (
     <div
