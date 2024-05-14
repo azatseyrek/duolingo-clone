@@ -9,3 +9,5 @@ export default {
     connectionString: process.env.DATABASE_URL!,
   },
 } satisfies Config;
+
+// satisfies typescriptte 4.9 ile gelen yeni bir ozelliktir. Burada as kullanimi cogu zaman cok guvenilir degildir. Onun yerine satifies daha dogru kullanim olacaktir.
