@@ -4,3 +4,5 @@ Neler ogrendim?
    default kullan!
 2. Layout icerisinde belirtilen bir component (header, footer vs) sayfalar degistiginde
    (ayni layout icerisindeki sayfalar) tekrardan render edilmez.
+
+3.
