@@ -13,7 +13,13 @@ interface flagButtonProps {
 export const FlagButton = ({ imagePath, altText, title }: flagButtonProps) => {
   return (
     <Button size="lg" variant="ghost" className="w-full">
-      <Image src={imagePath} alt={altText} height={32} width={40} className="mr-4 rounded-md" />
+      <Image
+        src={imagePath}
+        alt={altText}
+        height={32}
+        width={40}
+        className="mr-4 rounded-md"
+      />
       {title}
     </Button>
   );
