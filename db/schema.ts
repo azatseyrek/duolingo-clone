@@ -7,7 +7,7 @@ export const courses = pgTable('courses', {
   imageSrc: text('image_src').notNull(),
 });
 
-//* her bir kursun birden falza user progress'ı olabilir. Bu sebeple many ilişkisi tanımlıyoruz.
+// her bir kursun birden falza user progress'ı olabilir. Bu sebeple many ilişkisi tanımlıyoruz.
 export const coursesRealations = relations(courses, ({ many }) => ({
   userProgress: many(userProgress),
 }));
@@ -23,10 +23,11 @@ export const userProgress = pgTable('user_progress', {
   points: integer('points').notNull().default(0),
 });
 
-//* userProgress tablosu ile courses tablosu arasında one ilişkisi tanımlıyoruz. Burada activeCourseId alanı courses tablosundan gelen id alanına referans veriyor.
+// ?  WHAT IS THIS CODE DOING?
+// userProgress tablosu ile courses tablosu arasında one ilişkisi tanımlıyoruz. Burada activeCourseId alanı courses tablosundan gelen id alanına referans veriyor.
 export const userProgressRelations = relations(userProgress, ({ one }) => ({
+  // userProgress tablosundan gelen activeCourseId alanı courses tablosundan gelen id alanına referans veriyor.
   activeCourse: one(courses, {
-    //* userProgress tablosundan gelen activeCourseId alanı courses tablosundan gelen id alanına referans veriyor.
     fields: [userProgress.activeCourseId],
     references: [courses.id],
   }),

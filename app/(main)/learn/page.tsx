@@ -1,25 +1,17 @@
-import React from 'react';
+import { redirect } from 'next/navigation';
 
 import { FeedWrapper } from '@/components/feed-wrapper';
 import { Header } from '@/components/header';
 import { StickyWrapper } from '@/components/sticky-wrapper';
 import { UserProgress } from '@/components/user-progress';
+import { getUserProgress } from '@/db/queries';
 
-const LearnPage = () => {
-  let dbUrl: string;
+const LearnPage = async () => {
+  const [userProgress] = await Promise.all([getUserProgress()]);
 
-  switch (process.env.NODE_ENV) {
-    case 'development':
-      dbUrl = process.env.DATABASE_URL_DEV!;
-      break;
-    case 'production':
-      dbUrl = process.env.DATABASE_URL!;
-      break;
-    default:
-      dbUrl = process.env.DATABASE_URL_DEV!;
+  if (!userProgress || !userProgress.activeCourse) {
+    redirect('/courses');
   }
-
-  console.log(dbUrl);
 
   return (
     <div className="flex flex-row-reverse gap-12 px-6">

@@ -12,9 +12,7 @@ type CardProps = {
   disabled: boolean;
   active: boolean;
 };
-// revert message
 
-// Card Component
 export const Card = ({ id, title, imageSrc, onClick, disabled, active }: CardProps) => {
   return (
     <div
